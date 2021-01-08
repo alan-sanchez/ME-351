@@ -13,8 +13,10 @@ int buttonState = 0;         // variable for reading the pushbutton status
 void setup() {
   // Initialize baud reading for serial print
   Serial.begin(9600);
+  
   // initialize the LED pin as an output:
   pinMode(ledPin, OUTPUT);
+  
   // initialize the pushbutton pin as an input:
   pinMode(buttonPin, INPUT);
 }
@@ -27,12 +29,14 @@ void loop() {
   if (buttonState == HIGH) {
     // turn LED on:
     digitalWrite(ledPin, HIGH);
+    
     // Print the state of the button
     Serial.println("Button not pressed");
-    
+
   } else {
     // turn LED off:
     digitalWrite(ledPin, LOW);
+    
     // Print the state of the button
     Serial.println("Button Pressed");
   }
