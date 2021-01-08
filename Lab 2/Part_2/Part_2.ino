@@ -1,6 +1,7 @@
 /*
  Lab 2 part 2 Sign Off
 */
+
 // digital pin 2 has a pushbutton attached to it. Give it a name:
 int pot = 2;
 
@@ -21,7 +22,7 @@ void setup() {
 void loop() {
   
   // read the input on analog pin 0:
-  int sensorValue = analogRead(A0)*.00488;
+  int sensorValue = analogRead(A0)*.0049;
   
   // read the input on digital pin 2:
   int buttonState = digitalRead(pot);
