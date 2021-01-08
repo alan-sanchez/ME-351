@@ -12,30 +12,24 @@ void setup() {
   Serial.begin(9600);
   
   // make the potentiometer's pin an input:
-  pinMode(pot, INPUT);
+  pinMode(photo, INPUT);
 
   // print top line
-  Serial.println(" Time (ms), Input Value (V), Input Value (digital)");
+  Serial.println(" Time (ms), Input Value (V)");
 }
 
 // the loop routine runs over and over again forever:
 void loop() {
   
   // read the input on analog pin 0:
-  int sensorValue = analogRead(A0)*.0049;
+  float sensorValue = analogRead(A0)*.0049;
   
-  // read the input on digital pin 2:
-  int buttonState = digitalRead(pot);
-
   // read the current time
   int time = millis(); 
   
   // print out the value you read:
   Serial.print(time);
   Serial.print(",");
-  Serial.print(sensorValue);
-  Serial.print(",");
-  Serial.println(buttonState);
-  
-  delay(100);        // delay in between reads for stability
+  Serial.println(sensorValue);  
+  delay(10);        // delay in between reads for stability
 }
