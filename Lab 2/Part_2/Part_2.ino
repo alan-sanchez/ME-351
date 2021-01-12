@@ -22,7 +22,8 @@ void setup() {
 void loop() {
   
   // read the input on analog pin 0:
-  int sensorValue = analogRead(A0)*.0049;
+  float sensorValue = analogRead(A0);//*.0049;
+  float volt_val = sensorValue * 5.0 / 1023.0;
   
   // read the input on digital pin 2:
   int buttonState = digitalRead(pot);
@@ -33,7 +34,7 @@ void loop() {
   // print out the value you read:
   Serial.print(time);
   Serial.print(",");
-  Serial.print(sensorValue);
+  Serial.print(volt_val);
   Serial.print(",");
   Serial.println(buttonState);
   
