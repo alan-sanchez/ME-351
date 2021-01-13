@@ -4,14 +4,9 @@
 //    "byte" (8 bits) is smaller than "int" (16 bits), which is smaller than "long" (32 bits).
 const byte PIN_BUTTON_INTERRUPT = 2;
 
-// VARIABLE SETUP
-//  Variables changed within the interrupt function must be labeled "volatile"
-//    This tells the Arduino IDE that these variables may change in an interrupt
-//  States and flags are "bool", or true/false values. However, "bools" are still 8 bits.
-
 
 // Time is best represented as "unsigned", or only positive values. This gives us twice the range.
-volatile unsigned long time_interrupt = 0;
+volatile unsigned long count = 0;
 
 
 // setup() runs ONE TIME when the Arduino is powered on, reset, or the serial monitor is started.
