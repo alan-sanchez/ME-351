@@ -6,8 +6,9 @@ const byte PIN_BUTTON_INTERRUPT = 2;
 
 
 // Time is best represented as "unsigned", or only positive values. This gives us twice the range.
-volatile unsigned long count = 0;
-
+int count = 0;
+volatile unsigned long Bounce_Time = 0;
+volatile unsigned long bounceDelay = 150;
 
 // setup() runs ONE TIME when the Arduino is powered on, reset, or the serial monitor is started.
 void setup() {
@@ -20,14 +21,20 @@ void setup() {
   // Set up serial communication and print a message
   Serial.begin(9600);
   Serial.println("Starting Count!");
+
 }
 
 // loop() runs after setup and runs over and over until the board stops for some reason
 void loop() {
-  
+  //  before_pressed = millis();
+  Serial.println(count);
 }
 
 // this function runs when the button is pressed and the interrupt is triggered
 void button_interrupt() {
- 
+
+  if ((millis() - Bounce_Time) > bounceDelay) {
+    count = count + 1;
+    Bounce_Time = millis();
+  }
 }
