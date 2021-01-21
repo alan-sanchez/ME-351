@@ -6,7 +6,7 @@ const byte PIN_BUTTON_INTERRUPT = 2;
 
 
 // Time is best represented as "unsigned", or only positive values. This gives us twice the range.
-int count = 0;
+volatile int count = 0;
 volatile unsigned long Bounce_Time = 0;
 volatile unsigned long bounceDelay = 150;
 
