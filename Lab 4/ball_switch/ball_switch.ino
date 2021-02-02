@@ -2,7 +2,7 @@
 
 // Define pins
 const byte LED_PIN = LED_BUILTIN; // LED_BUILTIN = 13 on the Uno
-const byte SENSOR_PIN = 2;
+const byte SENSOR_PIN = 7;
 int state = 0;
 volatile int count = 0;
 int prev_state = 0;
